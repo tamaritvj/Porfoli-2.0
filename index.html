@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Tamarit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+    <style type="text/css">
+        :root {
+            --roig: #C1292E;
+            --blau: #235789;
+            --groc: #F1D302;
+            --groc_p: #FEEB72;
+            --blanc: #FDFFFC;
+            --gris: #E0E0E0;
+            --gris_oscur: #A3A3A3;
+            --negre: #020100;
+            --spacegrotesk: 'Space Grotesk', sans-serif;
+            --vampiroone: 'Vampiro One', sans-serif;
+            --bold: 700;
+            --semibold: 600;
+            --medium: 500;
+            --regular: 400;
+        }
+
+        /*REGLA PER A ELIMINAR EL BORDE PREDEFINIT*/
+        * {
+            margin: 0 0px 0 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /*REGLA PER A ELIMINAR EL BLAU DELS LINKS*/
+        a {
+            color: black;
+            font-family: var(--spacegrotesk);
+            text-decoration: none;
+        }
+
+
+
+        /*REGLA PER A ELIMINAR ESTIL PREDEFINIT DE LLISTES*/
+        ul li {
+            list-style-type: none;
+        }
+
+        /*MARGES DEL COSTAT*/
+        body {
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: white
+        }
+
+        /*GRID CABECERA*/
+
+        .grid_cabecera {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 75px);
+            font-size: 20px;
+            font-family: var(--spacegrotesk);
+
+
+        }
+
+        #porfolio {
+            background-color: white;
+            border-color: black;
+            border-width: 0 0 2px 0;
+            border-style: solid;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        #contacto {
+            background-color: white;
+            border-color: black;
+            border-width: 0 0 2px 0;
+            border-style: solid;
+            display: flex;
+            align-items: flex-end;
+
+        }
+
+        #instagram {
+            background-color: white;
+            border-color: black;
+            border-width: 0 0 2px 0;
+            border-style: solid;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        h1 {
+            margin: 0px 0 300px 0;
+            padding: 150px 0 0 0;
+            font-family: var(--vampiroone);
+            font-weight: var(--regular);
+            font-size: 58px;
+        }
+
+        #bio {
+            width: 500px;
+            height: 200px;
+            font-family: var(--spacegrotesk);
+        }
+
+        /*GRID GALERÍA*/
+        .grid_galeria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* grid-template-rows: repeat(2, 350px); */
+            grid-template-rows: repeat(2);
+
+            font-family: var(--spacegrotesk);
+            font-size: 16px;
+            font-weight: var(--regular);
+            flex-wrap: wrap;
+            /* text-align: center; */
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+
+
+        }
+
+        .container_img {
+            width: 320px;
+            height: 200px;
+            /* filter:blur(15px);
+            transition: 1s; */
+
+        }
+
+        /* .container_img:hover{
+        filter: blur(0px);
+        } */
+
+
+        img {
+            /* width: 320px;
+            height: 200px; */
+            width: 100%;
+
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+
+        /* #targeta_01 div{
+        object-fit: cover;
+        } */
+
+        img:hover {
+            filter: grayscale(0%);
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        header>p {
+            font-size: 16px;
+        }
+
+
+        /*GRID FOOTER*/
+        .grid_footer {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(1, 200px);
+            font-size: 20px;
+            font-family: var(--spacegrotesk);
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        #redes {
+            background-color: white;
+            border-color: black;
+            border-width: 0px 0 0 0;
+            border-style: solid;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #bio1 {
+            grid-column: 2/3;
+            background-color: white;
+            border-color: black;
+            border-width: 0px 0 0 0;
+            border-style: solid;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+        }
+
+        #bio2 {
+            grid-column: 3/4;
+            background-color: white;
+            border-color: black;
+            border-width: 0px 0 0 0;
+            border-style: solid;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+
+        }
+
+        #copyright {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            width: 100px;
+            height: 100px;
+            animation-name: copy;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        #copyright_img {
+            width: 200px;
+            height: 200px;
+        }
+
+        @keyframes copy {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            10% {
+                top: 10%;
+                left: 90%;
+            }
+
+            35% {
+                top: 100%;
+                left: 60%;
+            }
+
+            75% {
+                top: 50%;
+                left: 15%;
+            }
+
+            100% {
+                top: 0;
+                left: 0;
+                transform: rotate(360deg);
+            }
+        }
+
+        /* .hovertext {
+            position: relative;
+            left: ;
+            border-bottom: 1px dotted black;
+        } */
+
+        .hovertext:before {
+            content: attr(data-hover);
+            visibility: hidden;
+            opacity: 0;
+            width: 150px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            /* border-radius: 5px; */
+            padding: 5px 0;
+            transition: opacity 1s ease-in-out;
+
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            /* left: 70px;
+            top: 110%; */
+        }
+
+        .hovertext:hover:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #footer {
+            margin-top: 50px;
+        }
+
+        .iconos {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+
+        /*TABLET*/
+        /* @media (max-width:1024px){
+    } */
+        @media (max-width:600px) {
+
+            .grid_galeria {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                /* grid-template-rows: repeat(2, 350px); */
+                grid-template-rows: repeat(1fr);
+            }
+            #bio{
+                /* object-position: absolute; */
+                width: 300px;
+                height: 300px;
+            }
+    </style>
+</head>
+
+<body>
+    <!-- <span class="hovertext" data-hover="Hello, this is the tooltip">
+        Try hover over me
+    </span> -->
+    <header>
+        <!-- <div class="grid_cabecera">
+                <div id="porfolio">Porfolio</div>
+                <div id="contacto">→Contacto</div>
+                <div id="instagram">→Behance</div>
+            </div> -->
+        <h1>Juan Tamarit</h1>
+        <div id="bio">
+            <p>¡Hola! Mi nombre es Juan. Soy Diseñador Gráfico, aunque me formé y me dediqué primero como Pianista de
+                Jazz. Entre mis intereses está todo lo creativo. Lo gráfico, como no, pero también la fotografía y el
+                diseño sonoro. Por otro lado, siento y cultivo un interés por la psicología, que atañe de algún modo a
+                todo lo que hacemos las personas y considero que aporta un valor añadido a mis trabajos, a los que trato
+                de aportar un enfoque ético.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid_galeria">
+            <div class="hovertext" data-hover="Introducción al Html" id="targeta_01">
+                <div>
+                    <a href="https://tamaritvj.github.io/p1_Llocweb/">
+                        <img src="img/p1.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Introducción al HTML</h2>
+                    <p>Práctica 1</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Inserción de imágenes" id="targeta_02">
+                <div>
+                    <a href="https://tamaritvj.github.io/p2_Img/">
+                        <img src="img/p2.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Inserción de imágenes</h2>
+                    <p>Práctica 2</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Inserción de otros elementos" id="targeta_03">
+                <div>
+                    <a href="https://tamaritvj.github.io/p3_Imagen_video_audio/">
+                        <img src="img/p3.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Inserción de otros elementos</h2>
+                    <p>Práctica 3</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Landing Page con galerías" id="targeta_04">
+                <div>
+                    <a href="https://tamaritvj.github.io/p4_Gallery/">
+                        <img src="img/p4.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Landing Page con galerías</h2>
+                    <p>Práctica 4</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Introducción a la retícula" id="targeta_05">
+                <div>
+                    <a href="https://tamaritvj.github.io/p5_Grid/">
+                        <img src="img/p5.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Introducción a la retícula</h2>
+                    <p>Práctica 5</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Retícula avanzada y Queries" id="targeta_06">
+                <div>
+                    <a href="https://tamaritvj.github.io/p6_Suprematismo/">
+                        <img src="img/p6.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Introducción al Portfolio" id="targeta_07">
+                <div>
+                    <a href="https://tamaritvj.github.io/p7_Portfolio/">
+                        <img src="img/Introducción al porfolio.png">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Selectores de javascript" id="targeta_08">
+                <div>
+                    <a href="https://tamaritvj.github.io/p8_js_selectors/">
+                        <img src="img/selectores de javascript.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Introducción a las animaciones" id="targeta_09">
+                <div>
+                    <a href="https://tamaritvj.github.io/p8_Animacio/">
+                        <img src="img/Introducción a las animaciones.jpeg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="'Events' de javascript" id="targeta_10">
+                <div>
+                    <a href="https://tamaritvj.github.io/p9_js_events/">
+                        <img src="img/selectores de javascript.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="'Effects' de javascript" id="targeta_11">
+                <div>
+                    <a href="https://tamaritvj.github.io/p10_js_effects/">
+                        <img src="img/selectores de javascript.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Galerías de javascript" id="targeta_12">
+                <div>
+                    <a href="https://tamaritvj.github.io/p11_js_gallery/">
+                        <img src="img/selectores de javascript.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Galerías tipo 'slider'" id="targeta_13">
+                <div>
+                    <a href="https://tamaritvj.github.io/p12_js_gallery_download/">
+                        <img src="img/selectores de javascript.jpg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+            <div class="hovertext" data-hover="Experimentación dadaísta" id="targeta_14">
+                <div>
+                    <a href="https://tamaritvj.github.io/p13_avantguardes/">
+                        <img src="img/dada.jpeg">
+                    </a>
+                </div>
+                <!-- <header>
+                    <h2>Retícula avanzada y Queries</h2>
+                    <p>Práctica 6</p>
+                </header> -->
+            </div>
+
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="grid_footer">
+            <div class="iconos" id="be">
+                <h3>
+                    <a href="https://www.behance.net/juantamarit"><img src="img/behance.svg" alt=""></a>
+                </h3>
+
+            </div>
+            <div class="iconos" id="ig">
+                <h3>
+                    <a href="https://www.instagram.com/jntamarit/"><img src="img/insta-2.svg" alt=""></a>
+                </h3>
+
+            </div>
+            <div class="iconos" id="git">
+                <h3>
+                    <a href="https://github.com/tamaritvj?tab=repositories"><img src="img/github.svg" alt=""></a>
+                </h3>
+            </div>
+
+            <div class="iconos" id="co">
+                <h3>
+                    <a href="mailto:tamaritvj@easdalcoi.es"><img src="img/contacto.svg" alt=""></a>
+                </h3>
+            </div>
+
+    </footer>
+    <div id="copyright">
+        <img id="copyright_img" src="img/copyright.png" alt="">
+    </div>
+
+
+</body>
